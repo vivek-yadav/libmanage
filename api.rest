@@ -6,3 +6,44 @@ GET http://localhost:8080/swagger-ui.html
 
 ###
 GET http://localhost:8080/v2/api-docs
+
+###
+GET http://localhost:8080/books
+
+###
+GET http://localhost:8080/users/find?name=vivedk
+
+###
+GET http://localhost:8080/users
+
+###
+POST http://localhost:8080/books HTTP/1.1 
+content-type: application/json
+
+{ "title":"ABC", "author":"xyz", "copies":10 }
+
+###
+POST http://localhost:8080/books HTTP/1.1 
+content-type: application/json
+
+{ "title":"BCD", "author":"abc", "copies":5 }
+
+###
+POST http://localhost:8080/books HTTP/1.1 
+content-type: application/json
+
+{ "title":"ABC2", "author":"xyz", "copies":8 }
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"ABC2", "author":"xyz", "copies":8 },
+"user":{"name":"vivek"}}
+
+###
+POST http://localhost:8080/return HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"ABC2", "author":"xyz", "copies":8 },
+"user":{"name":"vivek"}}

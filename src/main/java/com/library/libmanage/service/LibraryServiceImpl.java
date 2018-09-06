@@ -1,39 +1,51 @@
 package com.library.libmanage.service;
 
+import java.util.List;
+
 import com.library.libmanage.dal.LibraryDal;
+import com.library.libmanage.model.Book;
+import com.library.libmanage.model.Borrow;
+import com.library.libmanage.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LibraryServiceImpl implements LibraryService{
+public class LibraryServiceImpl implements LibraryService {
 
     @Autowired
-    private LibraryDal dal
+    private LibraryDal dal;
 
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return dal.getUsers();
     }
-    public List<Book> getBooks(){
+
+    public List<Book> getBooks() {
         return dal.getBooks();
     }
-    public Boolean addBook(Book book){
-        return dal.addBook(book)
+
+    public Boolean addBook(Book book) {
+        return dal.addBook(book);
     }
-    public Boolean addUser(User user){
+
+    public Boolean addUser(User user) {
         return dal.addUser(user);
     }
-    public Boolean lendBook(Book book, User user){
-        return dal.lendBook(book, user);
+
+    public Boolean lendBook(Borrow borrow) {
+        return dal.lendBook(borrow);
     }
-    public Boolean returnBook(Book book, User user){
-        return returnBook(book, user);
+
+    public Boolean returnBook(Borrow borrow) {
+        return dal.returnBook(borrow);
     }
-    public List<User> findUser(String name){
-        return findUser(name);
+
+    public User findUser(String name) throws Exception {
+        return dal.findUser(name);
     }
-    public List<Book> findBook(String title, String author){
-        return findBook(title, author);
+
+    public List<Book> findBooks(String title, String author) throws Exception {
+        return dal.findBooks(title, author);
     }
 
 }

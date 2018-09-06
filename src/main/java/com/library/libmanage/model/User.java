@@ -1,6 +1,7 @@
 package com.library.libmanage.model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,5 +18,5 @@ public class User {
     String name;
     Integer borrowLimit;
     @JsonIgnore
-    List<Book> books;
+    Set<Book> books = new HashSet<>();
 }
