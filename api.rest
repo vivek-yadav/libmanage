@@ -17,6 +17,12 @@ GET http://localhost:8080/users/find?name=vivedk
 GET http://localhost:8080/users
 
 ###
+POST http://localhost:8080/users HTTP/1.1 
+content-type: application/json
+
+{ "name":"ABC2", "borrowLimit":5 }
+
+###
 POST http://localhost:8080/books HTTP/1.1 
 content-type: application/json
 

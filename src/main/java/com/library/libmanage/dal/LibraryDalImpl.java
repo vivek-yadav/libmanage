@@ -2,7 +2,6 @@ package com.library.libmanage.dal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -24,8 +23,8 @@ public class LibraryDalImpl implements LibraryDal {
     Map<String, Map<String, Book>> bookAuthors = new HashMap<>(); // outerkey : Author, innerkey: Title
 
     public LibraryDalImpl() {
-        this.addUser(new User("vivek", 5, new HashSet<>()));
-        this.addBook(new Book("ABC", "abc", 10, new HashSet<>()));
+        // this.addUser(new User("vivek", 5, new HashSet<>()));
+        // this.addBook(new Book("ABC", "abc", 10, new HashSet<>()));
     }
 
     @Override
