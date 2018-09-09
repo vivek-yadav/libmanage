@@ -20,13 +20,114 @@ GET http://localhost:8080/users
 POST http://localhost:8080/users HTTP/1.1 
 content-type: application/json
 
-{ "name":"ABC2", "borrowLimit":5 }
+{ "name":"U1", "borrowLimit":1 }
+
+
+###
+POST http://localhost:8080/users HTTP/1.1 
+content-type: application/json
+
+{ "name":"U2", "borrowLimit":2 }
 
 ###
 POST http://localhost:8080/books HTTP/1.1 
 content-type: application/json
 
-{ "title":"ABC", "author":"xyz", "copies":10 }
+{ "title":"B1", "author":"A1", "copies":2 }
+
+###
+POST http://localhost:8080/books HTTP/1.1 
+content-type: application/json
+
+{ "title":"B2", "author":"A1", "copies":1 }
+
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B2", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/return HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B2", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/return HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"U2"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B2", "author":"A1"},
+"user":{"name":"U2"}}
+
+###
+POST http://localhost:8080/return HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B2", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"U1"}}
+
+###
+POST http://localhost:8080/lend HTTP/1.1 
+content-type: application/json
+
+{"book":{ "title":"B1", "author":"A1"},
+"user":{"name":"UX"}}
+
+
+
+
+
+
+
+
+
+
+
+
+###
+POST http://localhost:8080/books HTTP/1.1 
+content-type: application/json
+
+{ "title":"ABC1", "author":"xyz", "copies":1 }
 
 ###
 POST http://localhost:8080/books HTTP/1.1 
@@ -44,8 +145,8 @@ content-type: application/json
 POST http://localhost:8080/lend HTTP/1.1 
 content-type: application/json
 
-{"book":{ "title":"ABC2", "author":"xyz", "copies":8 },
-"user":{"name":"vivek"}}
+{"book":{ "title":"BCD", "author":"abc"},
+"user":{"name":"vivek1"}}
 
 ###
 POST http://localhost:8080/return HTTP/1.1 

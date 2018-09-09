@@ -24,5 +24,5 @@ public interface LibraryService {
 
     public User findUser(String name) throws Exception;
 
-    public List<Book> findBooks(String title, String author) throws Exception ;
+    public Book findBooks(String title, String author) throws Exception;
 }

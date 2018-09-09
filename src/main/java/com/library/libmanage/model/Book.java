@@ -20,4 +20,18 @@ public class Book {
     Integer copies;
     @JsonIgnore
     Set<User> users = new HashSet<>();
+
+    @Override
+    public int hashCode() {
+        return (this.title + "-" + this.author).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Book) {
+            Book other = (Book) o;
+            return this.title.equals(other.title) && this.author.equals(other.author);
+        }
+        return false;
+    }
 }

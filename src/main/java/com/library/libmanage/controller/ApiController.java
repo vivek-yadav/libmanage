@@ -32,8 +32,7 @@ public class ApiController {
     }
 
     @RequestMapping(value = "/books/find", method = RequestMethod.GET)
-    public List<Book> findBooks(@RequestParam("title") String title, @RequestParam("author") String author)
-            throws Exception {
+    public Book findBooks(@RequestParam("title") String title, @RequestParam("author") String author) throws Exception {
         return service.findBooks(title, author);
     }
 

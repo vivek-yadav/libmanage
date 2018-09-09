@@ -19,4 +19,18 @@ public class User {
     Integer borrowLimit;
     @JsonIgnore
     Set<Book> books = new HashSet<>();
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof User) {
+            User other = (User) o;
+            return this.name.equals(other.name);
+        }
+        return false;
+    }
 }
